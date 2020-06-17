@@ -1,0 +1,55 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<h2 class="text-center my-5 col-md-3 mx-auto  p-2">Page personnelle</h2>
+<hr>
+
+    <div class="row d-flex justify-content-center m-5">
+
+        <div class="col-md-4 rounded mx-auto" >
+            {# <div class="rounded"> #}
+                <div class="col-md-10 bg-dark rounded d-flex flex-column justify-content-center text-white text-center p-3">
+                    <img class="mt-4 rounded" src="{{ asset('images/produits/' ~ user.image ) }}" alt="Card image cap"><hr>
+                    <p id="divInfoPersoOff" class="p-2 rounded bg-secondary">{{ user.pseudo }}</p>
+                    <p id="divInfoPersoOff" class="p-2 rounded bg-secondary"><i class="far fa-envelope mr-2"></i><a class="text-white" href="mailto:{{ user.email }}">{{ user.email|raw }}</a></p>
+                    <p id="divInfoPersoOff" class="p-2 rounded bg-secondary"><i class="fas fa-phone-alt mr-2"></i>{{ user.telephone }}</p>
+                    {% if app.user %}
+                        <a id="divInfoPersoOn" class="p-2 rounded bg-primary text-white text-decoration-none" href="{{ path('modifierProfil', {'id': app.user.id}) }}">Mes Informations personnel</a>      
+                    {% endif %}
+                </div>
+            {# </div> #}
+        </div>
+
+    </div>
+
+    <div id="colorPerso" class="col-md-8 rounded border border-secondary mx-auto p-5 mb-5">
+        <div class="col-md-12 d-flex justify-content-center mx-auto">
+
+            <div id="colorPerso" class="row d-flex justify-content-center text-white">
+                {% for annoncePersonnel in user.annonce %}
+                    <div class="col-md-3 m-2 p-3 bg-secondary rounded border border-dark">
+                        <img class="card-img-top" src="{{ asset('images/produits/' ~ annoncePersonnel.image ) }}" alt="Card image cap">
+                            
+                        <strong>{{ annoncePersonnel.title }}</strong>
+                        <p>{{ annoncePersonnel.prix }} €</p>
+                        <p class="text-right">Posté le {{ annoncePersonnel.CreatedAt|date('d/m/Y') }} à {{ annoncePersonnel.CreatedAt|date('H:i:s') }}</p>
+                        
+                        <div class="row d-flex-justify-content-end">
+                            <div class="col-md-3"><a id="colorBtnInput " class="btn btn-success rounded text-white mb-2" href="{{ path('blog_show', {'id': annoncePersonnel.id} ) }}">Voir</a></div> 
+                            <div class="col-md-3"></div>  {% if app.user.id == annoncePersonnel.user.id %}
+                                <a id="colorBtnInput " class="btn rounded bg-white mr-2 ml-3 mb-2" href="{{ path('blog_show', {'id': annoncePersonnel.id} ) }}"><i style="color: rgb(160, 9, 127);" class="fas fa-pen"></i></a>
+                            <div class="col-md-3"><a id="colorBtnInput " class="btn rounded bg-white mb-2" href="{{ path('blog_show', {'id': annoncePersonnel.id} ) }}"><i style="color: rgb(160, 9, 9);" class="far fa-trash-alt"></i></a></div> 
+                            {% endif %}
+                        </div> 
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+{% endblock %}

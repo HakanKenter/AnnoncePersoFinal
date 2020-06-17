@@ -1,0 +1,66 @@
+{% extends "base.html.twig" %} 
+
+
+{% block body %}
+    
+
+
+<div class="text-center">
+
+    <div class=" d-flex justify-around m-3 p-2">
+        <br>
+        <br>
+
+        <div class="col-md-7">
+            <div  style=" box-shadow: 8px 8px 12px #aaa; padding: 2em 2em 0em 2em " class"" id="colorPerso" class=" pb-2 rounded border border-secondary">
+                <article >
+
+                    <img  style=" box-shadow: 8px 8px 12px rgb(36, 36, 36)" class="card-img-top   rounded" src="{{ asset('images/produits/' ~ annonce.image ) }}" alt="Card image cap">
+                    {# <img src="{{ annonce.Image }}" alt="{{ annonce.title }}" class="col-md-12 rounded"> #}
+
+                    <hr>
+                    <h2>{{ annonce.title }}</h2>
+
+                    <p>
+                        Prix : {{ annonce.prix }}</p>
+                    <hr>
+                    <div class="metadata">Posté le {{annonce.createdAt | date('d/m/y') }} à {{annonce.createdAt | date('H:i') }} dans la categorie <strong>{{ annonce.category }}</strong>
+                    </div>
+                    <div class="row">
+                        <div  class="col-md-3 text-center">
+                            <a id="divInfoPersoOn" href="{{ path('blog') }}" class="btn btn-dark text-white rounded mb-2">Acceuil</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            {# ################################################################################################################################# #}
+        </div>
+        <div class="col-md-3">
+            <div class="">
+
+                    <div style=" box-shadow: 2px 2px 5px #aaa; padding: 2em 2em 0em 2em "  id="colorPerso" class="col-md-7 rounded ">
+
+                        <div class="row d-flex justify-content-center ">
+                            <h3>Contact</h3>
+                            <p class="p-0 m-0"style="font-size:1.8 em;">Email: <strong>{{user.email|slice(3, 16)|raw }}</strong></p><hr>
+                            <p style="font-size:1.8 em;">Tel: <strong>{{ user.telephone }}</strong></p><hr>
+                            <p style="font-size:1.8 em;">Ville : <strong>{{user.ville}}</strong> </p><hr>
+                            <p class="mr-3" style="font-size:1.8 em;">Adresse: <strong>{{user.adresse}}</strong></p><hr>
+                            <a class="bg-dark p-2 m-2 rounded text-white" style="text-decoration: none;" href="{{ path('annonce_personnel', {'id':user.id}) }}">PAGE PERSONNEL</a><br>
+                        
+                        </div><hr>
+                        
+
+                    </div>
+                </div>
+            </div>
+            <br>
+           
+
+
+        </div>
+
+    </div>
+
+
+    {% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block Bienvenue %}
+
+    <h1 id="titre-accueil" class='mx-auto text-white mb-5 text-center bienvenue ml-2 d-none d-sm-block'>{{ title }}</h1>
+                        
+{% endblock %}
+
+
+{% block body %}
+   
+    <section class="annonces row d-flex justify-content-center mx-auto">
+        {% for annonce in annonces %}
+
+                <article class="col-md-3 border border-secondary rounded m-5 text-center bg-dark rounded m-3 p-2 text-white">
+                    <img src="{{ annonce.Image }}" alt="{{ annonce.title }}" class="col-md-12 rounded"><hr>
+                    <h2>{{ annonce.title|slice(3, 20)|raw  }}</h2>
+                    <p> Prix : <span class="font-weight-bold" >{{ annonce.prix }}</span></p><hr>
+                    <p> Catégory : <span class="font-weight-bold" >{{ annonce.category.nom }}</span></p><hr>
+                    <div class="metadata">Posté le {{annonce.createdAt | date('d/m/y') }} à {{annonce.createdAt | date('H:i') }}</div> 
+                    <a href="{{ path('blog_show', {'id':annonce.id}) }}" class="btn btn-primary m-3">Voir l'annonce</a>
+                </article>
+
+        {% endfor %}
+    </section>
+
+{% endblock %}

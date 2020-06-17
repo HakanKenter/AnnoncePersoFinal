@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %} 
+
+{% block body %}
+
+    <h1 class="display-4 text-center mt-2 mb-5">Bonjour!</h1>
+
+    {% if error %}
+
+        <p class="bg-danger text-white text-center p-2 col-md-3 m-3 mx-auto rounded">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+
+    {% endif %}
+
+    
+        <form action="{{ path('security_login') }}" method="post" class="col-md-5 mx-auto form-connexion">
+            
+            <div id="colorBtnInput" class="form-group rounded border border-secondary">
+                <label class="ml-2" for="_username">Email</label>
+                <input type="text" class="form-control" name="_username" placeholder="Adresse email..." required="_username" value="{{ last_username }}">
+
+            </div>
+
+
+            <div id="colorBtnInput" class="form-group rounded border border-secondary">
+                <label class="ml-2" for="_password">Mot de passe</label>
+                <input type="password" class="form-control" name="_password" placeholder="Mot de passe..." required="_password">
+            </div>
+
+            <div class="d-flex justify-content-around mb-3">
+                <input id="colorBtnInput" type="submit" value="Connexion" class="btn">
+            </div>
+            <em>
+        
+        </form>
+    
+
+
+        <div class="d-flex justify-content-center">
+            <p>Pas encore de compte? <strong><a href="{{ path('registration') }}">Créer un compte</a></strong> </p>
+        </div>
+    </em>
+{% endblock %}

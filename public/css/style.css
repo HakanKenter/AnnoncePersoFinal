@@ -1,0 +1,255 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    font-family: 'Oxygen', sans-serif;
+}
+
+
+/* .contenu-base { */
+
+
+/* height: 50vh; */
+
+
+/* background-color: blueviolet; */
+
+
+/* height: 95vh;
+    position: relative; */
+
+
+/* } */
+
+
+/* .navbar{
+    position: fixed;
+} */
+
+#sur-carousel {
+    position: absolute;
+    z-index: 2;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pos {
+    position: relative;
+}
+
+#carouselExampleControls {
+    /* position: absolute; */
+    z-index: 1;
+    /* opacity: 0.3; */
+}
+
+#cadre-recherche {
+    background-color: rgb(226, 98, 38);
+}
+
+#desposer-annonce {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(138, 138, 138);
+    z-index: 99;
+    display: none;
+}
+
+.deposer-annonce-titre {
+    color: rgb(226, 98, 38);
+    background-color: rgb(43, 43, 43);
+}
+
+footer {
+    background-color: #D1A97A
+}
+
+#colorPerso {
+    background-color: #D1A97A;
+    display: flex;
+    justify-content: center;
+}
+
+/* #navbarsExample04 {
+    display: flex;
+    justify-content: space-around;
+} */
+
+/* .nav-item {
+    margin-right: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+} */
+
+.nav-link:hover {
+    background-color: gray;
+    border-radius: 5px 5px 5px;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    list-style: none;
+    text-decoration-style: none;
+}
+
+#colorBtnInput {
+    background-color: #D1A97A
+}
+
+#colorBtnInput:hover {
+    background-color: rgb(141, 114, 84);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#divInfoPersoOff {
+    background-color: rgb(174, 177, 180);
+}
+
+#divInfoPersoOn {
+    background-color: rgb(86, 87, 88);
+}
+
+#divInfoPersoOn:hover {
+    background-color: rgb(47, 47, 48);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.ml2 {
+    font-weight: 900;
+    font-size: 3.5em;
+  }
+  
+.ml2 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+.footer {
+    padding-bottom: 0;
+}
+/* 
+img {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+} */
+
+.btnDown {
+    padding-bottom: 0;
+}
+/* iPad Pro */
+@media screen and (min-width: 1000px) and (max-width: 1100px){
+    .bienvenue{
+        font-size: 3em;
+        padding-bottom: 25vh;
+    }
+    .form-connexion{
+        margin-bottom: 4vh;
+        margin-top: 2.5vh;
+    }
+    .categories{
+        margin-bottom: 20vh;
+    }
+}
+
+/* iPad */
+@media screen and (min-width: 750px) and (max-width: 1000px){
+    .bienvenue{
+        font-size: 2em;
+        padding-bottom: 25vh;
+    }
+    .categories{
+        margin-bottom: 25vh;
+    }
+}
+
+/* iPhone X */
+@media screen and (min-width: 350px) and (max-width: 500px){
+    .bienvenue{
+        display: none;
+    }
+    .a-propos{
+        display: flex;
+        flex-direction: column;
+    }
+    .info-perso{
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar-toggler{
+        position: relative;
+        left: 20vw;
+    }
+    .navbar-brand{
+        position: relative;
+        right: 20vw;
+    }
+    .categories{
+        margin-bottom: 47vh;
+    }
+    /* .info-perso{
+        margin-bottom: 2vh;
+    } */
+}
+/* iPhone 6/7/8 */
+@media screen and (min-width: 350px) and (min-height: 650px) and (max-width: 400px) and (max-height: 700px){
+    .categories{
+        margin-bottom: 57vh;
+    }
+}
+
+/* iPhone 5/SE */
+@media screen and (min-width: 300px) and (min-height: 550px) and (max-width: 400px) and (max-height: 650px) {
+    .bienvenue{
+        display: none;
+    }
+    .a-propos{
+        display: flex;
+        flex-direction: column;
+    }
+    .info-perso{
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar-toggler{
+        position: relative;
+        left: 15vw;
+    }
+    .navbar-brand{
+        position: relative;
+        right: 15vw;
+    }
+    .categories{
+        margin-bottom: 72vh;
+    }
+    .bouton-rechercher{
+        position: relative;
+        bottom: 2vh;
+    }
+}
+
+/* Pixel 2 XL */
+@media screen and (min-width: 400px) and (min-height: 800px) and (max-width: 450px) and (max-height: 850px){
+    .categories{
+        margin-top: 5vh;
+    }
+}
+
+/* Galaxy S5/ Moto G4 */
+@media screen and (min-width: 350px) and (min-height: 600px) and (max-width: 400px) and (max-height: 650px) {
+    .bienvenue{
+        display: none;
+    }
+    .categories{
+        margin-top: 14vh;
+    }
+}
